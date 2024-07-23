@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernates-basic-web
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: kubernates-basic-web
+  template:
+    metadata:
+      labels:
+        app: kubernates-basic-web
+    spec:
+      containers:
+      - name: kubernates-basic-web
+        image: nirajk1/kubernates-basic-web:v1
+        ports: 
+        - containerPort: 3000
